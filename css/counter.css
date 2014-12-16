@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #000b00;
+  background-color: #eee;
+/* border: 1px solid #0f0; */
+}
+
+a {
+  color: #2e2930;
+  color: #e45e32;
+  text-decoration: none;
+  text-shadow: 1px 1px 4px rgba(254, 244, 244, 0.5), -1px -1px 4px rgba(254, 244, 244, 0.5);
+}
+a:link {
+}
+a:visited {
+}
+a:hover {
+  text-decoration: blink;
+  text-shadow: 2px 2px 4px rgba(71, 74, 77, 0.4);
+}
+a:active {
+  text-shadow: 2px 2px 8px rgba(254, 244, 244, 0.8), -2px -2px 8px rgba(254, 244, 244, 0.8);
+}
+
+/* content */
+div.cubes_wrapper {
+  width: 1200px;
+  text-align: center;
+  margin: auto;
+/* border: 1px solid #00f; */
+}
+
+div.cube_frame {
+  display: inline-block;
+  padding: 20px;
+  margin: 0 auto;
+  /*perspective*/
+  -webkit-perspective: 400;
+  -moz-perspective: 400;
+  -ms-perspective: 400;
+  -o-perspective: 400;
+  perspective: 400;
+/* border: 1px solid #f00; */
+}
+
+div.surface {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  padding: 5px;
+  border-radius: 3px;
+/* background-color: rgba(50, 50, 50, 0.7); */
+}
+
+div.cube {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  /*transition*/
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  -o-transition: -o-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  /*transform-style*/
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+div.cube div.top {
+  /*transform*/
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+  -moz-transform: rotateX(90deg) translateZ(50px);
+  -ms-transform: rotateX(90deg) translateZ(50px);
+  -o-transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+div.cube div.front {
+  /*transform*/
+  -webkit-transform: translateZ(50px);
+  -moz-transform: translateZ(50px);
+  -ms-transform: translateZ(50px);
+  -o-transform: translateZ(50px);
+  transform: translateZ(50px);
+}
+
+div.cube div.bottom {
+  /*transform*/
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+  -moz-transform: rotateX(-90deg) translateZ(50px);
+  -ms-transform: rotateX(-90deg) translateZ(50px);
+  -o-transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+div.cube div.back {
+  /*transform*/
+  -webkit-transform: rotateY(180deg) rotateZ(180deg) translateZ(50px);
+  -moz-transform: rotateY(180deg) rotateZ(180deg) translateZ(50px);
+  -ms-transform: rotateY(180deg) rotateZ(180deg) translateZ(50px);
+  -o-transform: rotateY(180deg) rotateZ(180deg) translateZ(50px);
+  transform: rotateY(180deg) rotateZ(180deg) translateZ(50px);
+}
+
+div.cube div.right {
+  /*transform*/
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+  -moz-transform: rotateY(90deg) translateZ(50px);
+  -ms-transform: rotateY(90deg) translateZ(50px);
+  -o-transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+div.cube div.left {
+  /*transform*/
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+  -moz-transform: rotateY(-90deg) translateZ(50px);
+  -ms-transform: rotateY(-90deg) translateZ(50px);
+  -o-transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+/* Counter */
+div.counter div.surface {
+  border: 1px solid rgb(200, 200, 200);
+  background-color: rgb(64, 64, 64);
+  background-color: rgba(64, 64, 64, 0.9);
+}
+div.counter div.surface span {
+  font-weight: bold;
+  line-height: 90px;
+  font-size: 64pt;
+  color: #fff;
+}
+
+div.message_wrapper {
+  width: 1200px;
+  height: 240px;
+  text-align: center;
+  margin: auto;
+  padding-top: 64px;
+/* border: 1px solid #00f; */
+}
+div.message_wrapper span.message {
+  font-weight: bold;
+  font-size: 128pt;
+  color: #000;
+  text-shadow: 0 1px 0 #ccc,
+  0 2px 0 #c9c9c9,
+  0 3px 0 #bbb,
+  0 4px 0 #b9b9b9,
+  0 5px 0 #aaa,
+  0 6px 1px rgba(0,0,0,.1),
+  0 0 5px rgba(0,0,0,.1),
+  0 1px 3px rgba(0,0,0,.3),
+  0 3px 5px rgba(0,0,0,.2),
+  0 5px 10px rgba(0,0,0,.25),
+  0 10px 10px rgba(0,0,0,.2),
+  0 20px 20px rgba(0,0,0,.15);
+}
+

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Welcome to mazgi.com!</title>
+    <!--[if lt IE 9]><script src="html5shiv/dist/html5shiv.js"></script><![endif]-->
+    <!--
+    http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/
+    -->
+    <link rel="stylesheet" href="css/counter.css" type="text/css" />
+  </head>
+  <body>
+    <div class="message_wrapper">
+      <span class="message" style="display: none;">Tiro Finale!</span>
+    </div>
+
+    <div class="cubes_wrapper">
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t1</span>
+          </div>
+          <div class="surface front">
+            <span>f1</span>
+          </div>
+          <div class="surface bottom">
+            <span>b1</span>
+          </div>
+          <div class="surface back">
+            <span>c1</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t2</span>
+          </div>
+          <div class="surface front">
+            <span>f2</span>
+          </div>
+          <div class="surface bottom">
+            <span>b2</span>
+          </div>
+          <div class="surface back">
+            <span>c2</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t3</span>
+          </div>
+          <div class="surface front">
+            <span>f3</span>
+          </div>
+          <div class="surface bottom">
+            <span>b3</span>
+          </div>
+          <div class="surface back">
+            <span>c3</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t4</span>
+          </div>
+          <div class="surface front">
+            <span>f4</span>
+          </div>
+          <div class="surface bottom">
+            <span>b4</span>
+          </div>
+          <div class="surface back">
+            <span>c4</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t5</span>
+          </div>
+          <div class="surface front">
+            <span>f5</span>
+          </div>
+          <div class="surface bottom">
+            <span>b5</span>
+          </div>
+          <div class="surface back">
+            <span>c5</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t6</span>
+          </div>
+          <div class="surface front">
+            <span>f6</span>
+          </div>
+          <div class="surface bottom">
+            <span>b6</span>
+          </div>
+          <div class="surface back">
+            <span>c6</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t7</span>
+          </div>
+          <div class="surface front">
+            <span>f7</span>
+          </div>
+          <div class="surface bottom">
+            <span>b7</span>
+          </div>
+          <div class="surface back">
+            <span>c7</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+      <div class="cube_frame">
+        <div class="cube counter">
+          <div class="surface top">
+            <span>t8</span>
+          </div>
+          <div class="surface front">
+            <span>f8</span>
+          </div>
+          <div class="surface bottom">
+            <span>b8</span>
+          </div>
+          <div class="surface back">
+            <span>c8</span>
+          </div>
+          <div class="surface right"></div>
+          <div class="surface left"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="ie-alert/theplugin/iealert.min.js"></script>
+    <!-- IE Alert -->
+    <script>
+      $("body").iealert();
+    </script>
+
+    <script>
+      var transform_props = 'transform,WebkitTransform,MozTransrom,OTransrom,msTransform'.split(',');
+      var transform_prop = null;
+      var tmp_el = document.createElement('div');
+      for(var i = 0, len = transform_props.length; i < len; i++) {
+        if(typeof tmp_el.style[transform_props[i]] !== 'undefined') {
+          transform_prop = transform_props[i];
+          break;
+        }
+      }
+      var cubes = $('div.cube');
+      var timer = 0;
+      cubes.click(function(ev) {
+        clearTimeout(timer);
+        for(var i = 0, len = cubes.length; i < len; i++) {
+          var cube = cubes[i];
+          var deg = 0;
+          if(cube == this) {
+            (function() {
+              var current_cube = cube;
+              timer = setTimeout(function() { current_cube.style[transform_prop] = "rotateY(0deg)"; }, 10000);
+            })();
+            deg = -180;
+          }
+          cube.style[transform_prop] = "rotateX(" + deg + "deg)";
+        }
+      });
+    </script>
+
+    <script>
+      var Counter = function(goal_value, start_value){
+        var this_ = this;
+        this.is_running = false;
+        this.delay = 1000;
+        this.goal_value = goal_value;
+        this.result_value = 0;
+        this.current_value = 0;
+        if(start_value) {
+          this.current_value = start_value;
+        }
+        this.recent_value = this.current_value;
+        this.loop_timer = null;
+        var cubes_ = $('div.cube.counter');
+        this.cubes = [];
+        this.degrees = [];
+        for(var i = 0; i < cubes_.length; i++) {
+          $(cubes_[i]).children('div.surface').children('span').text('0');
+          this.cubes.push(cubes_[i]);
+          this.degrees.push(0);
+        }
+        this.cubes = this.cubes.reverse();
+        this.finale = function(){
+          //alert('Tiro Finale!');
+          $('div.message_wrapper').children('span.message').toggle();
+        };
+        this.onFrame = function(){
+          for(var i = 0, len = this_.cubes.length; i < len; i++) {
+            var sq = Math.pow(10, i);
+            var recent = 0;
+            var current = 0;
+            if(this_.recent_value >= sq) {
+              recent = parseInt(parseInt(this_.recent_value / sq, 10) % 10, 10);
+            }
+            if(this_.current_value >= sq) {
+              current = parseInt(parseInt(this_.current_value / sq, 10) % 10, 10);
+            }
+            var cube = this_.cubes[i];
+            var span_class = "div.surface";
+            switch((this_.degrees[i] / 90 + 1) % 4) {
+              case 0:
+              span_class += ".front";
+              break;
+              case 1:
+              span_class += ".bottom";
+              break;
+              case 2:
+              span_class += ".back";
+              break;
+              case 3:
+              span_class += ".top";
+              break;
+            }
+            $(cube).children(span_class).children('span').text(current);
+            if(recent < current) {
+              this_.degrees[i] += 90;
+              cube.style[transform_prop] = "rotateX(" + this_.degrees[i] + "deg)";
+            }
+          }
+          this_.recent_value = this_.current_value;
+        };
+        this.loop = function(){
+          this_.is_running = true;
+          this_.current_value++;
+          if(this_.current_value == this_.goal_value) {
+            this_.finale();
+          }
+          if(this_.current_value < this_.result_value) {
+            this_.loop_timer = setTimeout(function(){
+              this_.loop();
+            }, this_.delay);
+            } else {
+            this_.is_running = false;
+          }
+          this_.onFrame();
+        };
+        this.apply = function(result_value){
+          if(this_.is_running) {
+            return -1;
+          }
+          this_.result_value = result_value;
+          this_.loop();
+          return 0;
+        };
+      };
+      var counter = new Counter(100);
+      counter.delay = 10;
+      counter.apply(10000);
+    </script>
+
+  </body>
+</html>
